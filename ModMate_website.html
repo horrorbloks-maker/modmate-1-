@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ModMate — najdi svůj další Minecraft modpack.">
+<title>ModMate — Minecraft modpacky</title>
+<style>
+:root{color-scheme:dark;--bg:#080d0b;--panel:#101813;--panel2:#14221a;--line:#26382d;--green:#8df0a7;--green2:#35b86a;--text:#f0f7f1;--muted:#9eafa3;--red:#ffb4a8}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 75% -10%,#1a3b28 0,transparent 45%),var(--bg);color:var(--text);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}.wrap{max-width:1180px;margin:auto;padding:24px}.top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:58px}.brand{display:flex;align-items:center;gap:11px;font-size:23px;font-weight:850;letter-spacing:-.7px}.logo{display:grid;place-items:center;width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,var(--green),var(--green2));color:#06100a;font-size:23px}.tag{color:var(--muted);font-size:13px}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav button,.secondary{border:1px solid var(--line);background:#101813;color:var(--text);border-radius:12px;padding:10px 14px}.nav button.active,.primary{background:var(--green);color:#07110a;border-color:var(--green);font-weight:750}.hero{max-width:760px;margin:0 auto 32px;text-align:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 11px;border:1px solid #2d583a;border-radius:99px;color:var(--green);font-size:12px;font-weight:700;background:#102218}.dot{width:7px;height:7px;background:var(--green2);border-radius:50%}h1{font-size:clamp(38px,7vw,68px);line-height:1.03;letter-spacing:-2.7px;margin:20px 0 15px}h1 span{color:var(--green)}.hero p{color:var(--muted);font-size:17px;margin:0 auto 25px;max-width:590px}.searchrow{display:flex;gap:10px;max-width:700px;margin:auto}.searchbox{display:flex;align-items:center;gap:10px;flex:1;min-width:0;border:1px solid #35473b;background:#0d1510;border-radius:15px;padding:0 15px}.searchbox input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--text);padding:15px 0}.primary{border:0;border-radius:13px;padding:13px 20px}.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:13px}.filters select{background:#101813;border:1px solid var(--line);border-radius:10px;color:var(--muted);padding:9px 12px;max-width:100%}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:38px 0 17px}.sectionhead h2{margin:0;font-size:23px;letter-spacing:-.5px}.sectionhead p{margin:4px 0 0;color:var(--muted);font-size:13px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{min-width:0;overflow:hidden;background:linear-gradient(160deg,#142019,#0e1511);border:1px solid var(--line);border-radius:18px;transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-3px);border-color:#4b7658}.cover{height:155px;background:linear-gradient(135deg,#1b3b28,#101b14);position:relative;overflow:hidden;display:grid;place-items:center}.cover img{width:100%;height:100%;object-fit:cover}.coverfallback{font-size:44px;opacity:.8}.fav{position:absolute;right:11px;top:11px;border:1px solid #ffffff25;background:#08100bdc;color:white;border-radius:10px;width:37px;height:37px;font-size:19px}.fav.saved{color:#ff9fa9}.cardbody{padding:16px}.card h3{font-size:17px;line-height:1.3;margin:0 0 8px}.desc{font-size:13px;color:var(--muted);min-height:58px;margin:0 0 13px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.meta{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}.pill{font-size:11px;color:#c4d7c9;border:1px solid #2b4031;border-radius:7px;padding:4px 7px;background:#111e15}.cardfoot{display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--muted);font-size:12px}.cardfoot a{color:var(--green);text-decoration:none;font-weight:700}.status{border:1px solid var(--line);border-radius:15px;padding:24px;text-align:center;color:var(--muted);background:#0e1511}.status strong{display:block;color:var(--text);font-size:16px;margin-bottom:5px}.hidden{display:none!important}.footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:48px;padding:22px 0;color:var(--muted);font-size:12px}.footer a{color:var(--green);text-decoration:none}.nav .nav-action{border:1px solid var(--line);background:#101813;color:var(--text);border-radius:12px;padding:10px 14px}.nav .nav-action.primary-action{background:var(--green);color:#07110a;border-color:var(--green);font-weight:800}.modal-backdrop{position:fixed;inset:0;background:#020604d9;backdrop-filter:blur(8px);z-index:20;display:grid;place-items:center;padding:18px}.modal{width:min(680px,100%);max-height:90vh;overflow:auto;background:#0d1510;border:1px solid #36523d;border-radius:22px;padding:24px;box-shadow:0 24px 90px #0009}.modalhead{display:flex;justify-content:space-between;gap:12px;align-items:start}.modal h2{margin:0;font-size:27px;letter-spacing:-.8px}.modal p{color:var(--muted)}.close{border:1px solid var(--line);background:#142019;color:var(--text);border-radius:10px;padding:7px 12px}.setup-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0}.field{display:flex;flex-direction:column;gap:7px;color:#c7d7cb;font-size:13px}.field select,.field input{width:100%;border:1px solid #304335;background:#101b14;color:var(--text);padding:12px;border-radius:11px}.setup-output{border:1px solid #294431;background:#101e14;border-radius:14px;padding:16px;margin-top:16px}.setup-output h3{margin:0 0 8px}.setup-output ul{margin:8px 0;padding-left:21px;color:#c5d5c9}.notice{font-size:13px;border-left:3px solid var(--green2);padding:10px 12px;background:#122017;color:#c6d8ca;border-radius:0 10px 10px 0}.modal-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}@media(max-width:540px){.setup-grid{grid-template-columns:1fr}.modal{padding:18px}.nav{width:100%}.nav>*{flex:1;text-align:center}}.error{color:var(--red)}@media(max-width:800px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.top{align-items:flex-start;flex-direction:column;margin-bottom:38px}}@media(max-width:540px){.wrap{padding:17px}.cards{grid-template-columns:1fr}.searchrow{flex-direction:column}.searchrow .primary{width:100%}h1{letter-spacing:-1.5px}.cover{height:180px}.desc{min-height:0}.sectionhead{align-items:flex-start;flex-direction:column}}
+
+textarea{font:inherit}
+.field textarea,.field input[type=text],.field input[type=number]{width:100%;border:1px solid #304335;background:#101b14;color:var(--text);padding:12px;border-radius:11px}
+.field textarea{resize:vertical;min-height:88px}
+.field small{color:var(--muted);font-size:12px}
+.setup-output .modlist{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:340px;overflow:auto;margin:12px 0}
+.mod-item{display:flex;gap:9px;align-items:center;border:1px solid #294431;border-radius:10px;padding:9px;background:#0c1910;min-width:0}
+.mod-item img{width:35px;height:35px;flex:none;border-radius:8px;object-fit:cover}
+.mod-item strong{display:block;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mod-item small{color:var(--muted);font-size:11px}
+.mod-item a{color:var(--green);text-decoration:none}
+.setup-output .progress{height:9px;border-radius:9px;background:#243329;overflow:hidden;margin:10px 0}
+.setup-output .progress>span{display:block;background:var(--green2);height:100%;transition:width .2s}
+.actions-row{display:flex;flex-wrap:wrap;gap:10px;margin:13px 0}
+.actions-row button{padding:12px 14px}
+.info-line{font-size:13px;color:var(--muted)}
+@media(max-width:570px){.setup-output .modlist{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div><div class="brand"><span class="logo">M</span>ModMate</div><div class="tag">Najdi modpack, který ti sedne.</div></div><nav class="nav" aria-label="Hlavní navigace"><button class="active" data-view="discover">Objevovat</button><button data-view="favorites">♥ Oblíbené <span id="favCount">0</span></button><button class="nav-action" id="autoSetupBtn" type="button">⚙ Auto-Setup</button><a class="secondary" style="text-decoration:none;display:inline-flex;align-items:center" href="https://modrinth.com/modpacks" target="_blank" rel="noopener">Modrinth ↗</a></nav></header>
+<main>
+<section class="hero" id="hero"><span class="eyebrow"><span class="dot"></span> MODPACKY Z MODRINTH</span><h1>Tvůj další svět<br>začíná <span>tady.</span></h1><p>Najdi nový Minecraft zážitek. Od pohodového stavění až po velké dobrodružství plné modů.</p><form class="searchrow" id="searchForm"><label class="searchbox"><span>⌕</span><input id="search" type="search" placeholder="Hledej modpacky… třeba RPG nebo technika" autocomplete="off"></label><button class="primary" type="submit">Hledat modpacky ↗</button></form><div class="filters"><select id="version" aria-label="Verze Minecraftu"><option value="">Všechny verze Minecraftu</option><option>1.21.1</option><option>1.21</option><option>1.20.1</option><option>1.20.4</option><option>1.19.2</option><option>1.18.2</option><option>1.16.5</option></select><select id="loader" aria-label="Mod loader"><option value="">Všechny loadery</option><option value="forge">Forge</option><option value="neoforge">NeoForge</option><option value="fabric">Fabric</option><option value="quilt">Quilt</option></select><select id="sort" aria-label="Řazení"><option value="relevance">Nejrelevantnější</option><option value="downloads">Nejstahovanější</option><option value="updated">Nedávno aktualizované</option></select></div></section>
+<section id="discoverView"><div class="sectionhead"><div><h2 id="resultTitle">Objev oblíbené modpacky</h2><p id="resultSubtitle">Aktuální výsledky z Modrinth</p></div><button class="secondary" id="clearFilters" type="button">Vymazat filtry</button></div><div id="results" class="cards"><div class="status" style="grid-column:1/-1"><strong>Načítám modpacky…</strong>Chvilku strpení.</div></div></section>
+<section id="favoritesView" class="hidden"><div class="sectionhead"><div><h2>Tvoje oblíbené</h2><p>Uložené v tomto prohlížeči na tomto zařízení.</p></div></div><div id="favoriteResults" class="cards"></div></section>
+</main><footer class="footer"><span>ModMate · Nezávislý projekt pro hráče Minecraftu</span><span>Data a projekty poskytuje <a href="https://modrinth.com" target="_blank" rel="noopener">Modrinth</a>.</span></footer>
+</div>
+<div id="modalRoot" class="hidden"></div>
+<script>
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id);let currentView='discover',lastPacks=[];const FAVKEY='modmate-favorites-v1';
+function getFavs(){try{return JSON.parse(localStorage.getItem(FAVKEY)||'[]')}catch{return []}}
+function setFavs(ids){try{localStorage.setItem(FAVKEY,JSON.stringify(ids))}catch{}$('favCount').textContent=ids.length}
+function escapeHTML(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function imageFor(p){return p.icon_url||p.gallery?.[0]?.url||''}
+function card(p){const id=p.project_id||p.id||'';const fav=getFavs().includes(id);const image=imageFor(p);const versions=(p.versions||[]).slice(0,2).join(', ');const loaders=(p.loaders||[]).slice(0,2).join(', ');const desc=p.description||'Bez popisu.';return `<article class="card"><div class="cover">${image?`<img src="${escapeHTML(image)}" alt="" loading="lazy" onerror="this.remove()">`:'<span class="coverfallback">▦</span>'}<button class="fav ${fav?'saved':''}" data-fav="${escapeHTML(id)}" aria-label="${fav?'Odebrat z':'Přidat do'} oblíbených">${fav?'♥':'♡'}</button></div><div class="cardbody"><h3>${escapeHTML(p.title||'Neznámý modpack')}</h3><p class="desc">${escapeHTML(desc)}</p><div class="meta">${versions?`<span class="pill">MC ${escapeHTML(versions)}</span>`:''}${loaders?`<span class="pill">${escapeHTML(loaders)}</span>`:''}</div><div class="cardfoot"><span>⬇ ${Number(p.downloads||0).toLocaleString('cs-CZ')} stažení</span><a href="https://modrinth.com/modpack/${encodeURIComponent(id)}" target="_blank" rel="noopener">Zobrazit ↗</a></div></div></article>`}
+function bindFavs(container){container.querySelectorAll('[data-fav]').forEach(btn=>btn.addEventListener('click',()=>{const id=btn.dataset.fav;let f=getFavs();f=f.includes(id)?f.filter(x=>x!==id):[...f,id];setFavs(f);render(lastPacks);if(currentView==='favorites')renderFavorites()}))}
+function render(packs){lastPacks=packs;$('results').innerHTML=packs.length?packs.map(card).join(''):'<div class="status" style="grid-column:1/-1"><strong>Nic jsme nenašli</strong>Zkus jiné hledání nebo odeber některý filtr.</div>';bindFavs($('results'))}
+function renderFavorites(){const ids=getFavs();const found=ids.map(id=>lastPacks.find(p=>(p.project_id||p.id)===id)).filter(Boolean);$('favoriteResults').innerHTML=found.length?found.map(card).join(''):'<div class="status" style="grid-column:1/-1"><strong>Zatím tu nic není</strong>Ulož si modpack kliknutím na srdíčko. Oblíbené se uloží v tomto prohlížeči.</div>';bindFavs($('favoriteResults'))}
+function facets(){const f=[['project_type:modpack']];if($('loader').value)f.push([`categories:${$('loader').value}`]);if($('version').value)f.push([`versions:${$('version').value}`]);return JSON.stringify(f)}
+async function loadPacks(){const query=$('search').value.trim();const sort=$('sort').value;const sortMap={relevance:'relevance',downloads:'downloads',updated:'updated'};$('resultTitle').textContent=query?`Výsledky pro „${query}“`:'Objev oblíbené modpacky';$('resultSubtitle').textContent='Načítám aktuální výsledky z Modrinth…';$('results').innerHTML='<div class="status" style="grid-column:1/-1"><strong>Hledám modpacky…</strong>Načítám data z Modrinth.</div>';
+const params=new URLSearchParams({query,limit:'18',index:sortMap[sort]||'relevance',facets:facets()});try{const response=await fetch('https://api.modrinth.com/v2/search?'+params.toString());if(!response.ok)throw new Error('Modrinth odpověděl chybou '+response.status);const data=await response.json();render(data.hits||[]);$('resultSubtitle').textContent=`Nalezeno ${Number(data.total_hits||0).toLocaleString('cs-CZ')} modpacků · data z Modrinth`;}catch(err){$('results').innerHTML=`<div class="status" style="grid-column:1/-1"><strong>Nepodařilo se načíst modpacky</strong><span class="error">${escapeHTML(err.message||'Chyba připojení')}</span><p>Zkontroluj připojení a zkus to znovu. Vyhledávání potřebuje internet a otevření webu přes GitHub Pages.</p><button class="primary" id="retry" type="button">Zkusit znovu</button><p><a style="color:var(--green)" href="https://modrinth.com/modpacks" target="_blank" rel="noopener">Otevřít Modrinth přímo ↗</a></p></div>`;$('resultSubtitle').textContent='Připojení k Modrinth se nezdařilo.';$('retry').addEventListener('click',loadPacks)}
+}
+
+/* Auto-Setup: real Modrinth projects, compatible files, dependencies and mrpack export. */
+const MM_API='https://api.modrinth.com/v2';
+let mmSelection=null,mmBusy=false;
+const mmNorm=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const mmSleep=ms=>new Promise(r=>setTimeout(r,ms));
+const mmWaitErr=e=>String(e?.message||e||'Neznámá chyba');
+async function mmGet(path){
+  let last;
+  for(let trial=0;trial<3;trial++){
+    try{
+      const r=await fetch(MM_API+path,{headers:{Accept:'application/json'}});
+      if((r.status===429||r.status>=500)&&trial<2){await mmSleep((trial+1)*850);continue;}
+      if(!r.ok)throw new Error('Modrinth API HTTP '+r.status);
+      return await r.json();
+    }catch(e){last=e;if(trial<2){await mmSleep((trial+1)*450);continue;}}
+  }
+  throw last;
+}
+function mmQueries(idea){
+  const n=mmNorm(idea),queries=[],groups=[];
+  const add=(key,words)=>{if(!groups.includes(key))groups.push(key);queries.push(...words)};
+  if(/horror|horor|scary|creepy|stras|desiv|prisera|monster|demon/.test(n))add('horror',['horror','creepy','scary','ambient sounds','monsters']);
+  if(/vykon|fps|optimal|performance|lag|rychl|setren|sodium|lithium/.test(n))add('performance',['performance','optimization','fps','memory']);
+  if(/fantasy|rpg|dobrodruz|quest|magic|kouzl/.test(n))add('rpg',['rpg','adventure','magic']);
+  if(/realisti|nature|realism|prirod|svet/.test(n))add('realistic',['realism','world generation','nature']);
+  if(/tech|stroje|automat|factory|industry/.test(n))add('tech',['technology','automation']);
+  if(/build|stavb|dekorac|furniture/.test(n))add('build',['building','decoration']);
+  const clean=n.replace(/\+/g,' ').split(/[^a-z0-9]+/).filter(x=>x.length>=4&&!['modpack','minecraft','mody','modu','chci','nejake','neco','hodne'].includes(x));
+  if(!groups.length){groups.push('custom');queries.push(idea.trim()||'adventure','utility','performance');}
+  else if(clean.length&&groups.length<2)queries.push(clean.slice(0,3).join(' '));
+  return {queries:[...new Set(queries)].slice(0,8),groups};
+}
+function mmThemes(project,groups){
+  const n=mmNorm([project.title,project.description,...(project.categories||[])].join(' '));
+  return groups.filter(g=>({
+    horror:/horror|scary|creepy|spooky|monster|haunt|fear|dark|terrify|sound|ambien|atmospher|undead|zombie|entity/.test(n),
+    performance:/performance|fps|optim|memory|sodium|lithium|ferrite|embeddium|modernfix|spark|fast|render|cull|occlusion|improve|stutter/.test(n),
+    rpg:/rpg|adventure|quest|magic|fantasy|dungeon|explore|dragon|combat/.test(n),
+    realistic:/realism|realistic|nature|biome|terrain|worldgen|world generation|environment/.test(n),
+    tech:/tech|machine|automation|industry|energy|create|engineering/.test(n),
+    build:/build|decorat|furniture|architecture|block|chisel/.test(n),
+    custom: true
+  })[g]);
+}
+function mmRank(project,groups){
+  const matches=mmThemes(project,groups);
+  let score=Math.log10(1+Number(project.downloads||0))*2+matches.length*13;
+  const title=mmNorm(project.title);
+  if(groups.includes('horror')&&/horror|scary|creepy|monster|ambien/.test(title))score+=10;
+  if(groups.includes('performance')&&/fps|perform|optim|sodium|lithium|embeddium|modernfix/.test(title))score+=10;
+  return score;
+}
+function mmPrimaryFile(ver){
+  return (ver.files||[]).find(f=>f.primary&&/\.jar$/i.test(f.filename||'')&&f.hashes?.sha1&&f.hashes?.sha512)
+    ||(ver.files||[]).find(f=>/\.jar$/i.test(f.filename||'')&&f.hashes?.sha1&&f.hashes?.sha512&&!/source|dev|javadoc/i.test(f.file_type||''));
+}
+function mmVersionValid(v,mc,loader){
+  return (v.game_versions||[]).includes(mc)&&(v.loaders||[]).includes(loader)&&v.version_type!=='alpha'
+    &&!['server_only','dedicated_server_only','server_only_client_optional'].includes(v.environment);
+}
+function mmChooseVersion(versions,mc,loader){
+  const options=(versions||[]).filter(v=>mmVersionValid(v,mc,loader)&&mmPrimaryFile(v));
+  options.sort((a,b)=>(a.version_type==='release'?0:1)-(b.version_type==='release'?0:1)||new Date(b.date_published||0)-new Date(a.date_published||0));
+  return options[0]||null;
+}
+function mmMessage(msg,pct=0){
+ const elem=$('setupOutput');if(!elem)return;
+ elem.classList.remove('hidden');
+ elem.innerHTML=`<strong>${escapeHTML(msg)}</strong><div class="progress"><span style="width:${Math.max(0,Math.min(100,pct))}%"></span></div><small>Nezavírej okno během výběru modů.</small>`;
+}
+function mmLoaderKey(loader){return {'fabric':'fabric-loader','quilt':'quilt-loader','forge':'forge','neoforge':'neoforge'}[loader]}
+async function mmFindLoaderVersion(mc,loader){
+ try{
+   let result='';
+   if(loader==='fabric'){
+     const r=await fetch('https://meta.fabricmc.net/v2/versions/loader/'+encodeURIComponent(mc));
+     if(r.ok){const v=await r.json();result=v.find(x=>x.loader?.stable)?.loader?.version||v[0]?.loader?.version||'';}
+   }else if(loader==='quilt'){
+     const r=await fetch('https://meta.quiltmc.org/v3/versions/loader/'+encodeURIComponent(mc));
+     if(r.ok){const v=await r.json();result=v.find(x=>x.loader?.version)?.loader?.version||'';}
+   }else if(loader==='forge'){
+     const r=await fetch('https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json');
+     if(r.ok){const data=await r.json();result=data.promos?.[mc+'-recommended']||data.promos?.[mc+'-latest']||'';}
+   }else if(loader==='neoforge'){
+     const m=/^1\.(\d+)\.(\d+)$/.exec(mc);
+     if(!m)return '';
+     const prefix=m[1]+'.'+m[2]+'.';
+     const r=await fetch('https://maven.neoforged.net/api/maven/versions/releases/net/neoforged/neoforge');
+     if(r.ok){
+       const data=await r.json();
+       const versions=(data.versions||[]).filter(x=>x.startsWith(prefix)&&!x.includes('-'));
+       result=versions[versions.length-1]||'';
+     }
+   }
+   return result;
+ }catch(e){return '';}
+}
+function mmClose(){
+ if(mmBusy)return;
+ $('modalRoot').classList.add('hidden');$('modalRoot').innerHTML='';
+}
+function showModal(){
+ const root=$('modalRoot');root.classList.remove('hidden');
+ root.innerHTML=`<div class="modal-backdrop" id="modalBackdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modalhead"><div><span class="eyebrow">MODMATE GENERÁTOR</span><h2 id="modalTitle">⚙ Auto-Setup · 50 modů</h2><p style="margin:7px 0 0">Popiš svůj vysněný Minecraft a sestav modpack z reálných modů na Modrinth.</p></div><button class="close" id="closeModal" aria-label="Zavřít">✕</button></div>
+ <div class="setup-grid">
+ <label class="field" style="grid-column:1/-1">Co chceš hrát?<textarea id="setupIdea" placeholder="Např. horror + šetření výkonu, strašidelná atmosféra a více FPS">Horror + šetření výkonu</textarea><small>ModMate najde odpovídající mody a jejich nutné závislosti.</small></label>
+ <label class="field">Verze Minecraftu<select id="setupVersion"><option>1.21.1</option><option>1.20.1</option><option>1.21.4</option><option>1.21</option><option>1.20.4</option><option>1.19.2</option><option>1.18.2</option><option>1.16.5</option></select></label>
+ <label class="field">Mod loader<select id="setupLoader"><option value="neoforge">NeoForge</option><option value="fabric">Fabric</option><option value="forge">Forge</option><option value="quilt">Quilt</option></select></label>
+ <label class="field">Název modpacku<input type="text" id="setupName" value="ModMate Horror + FPS" maxlength="80"></label>
+ <label class="field">Verze loaderu<input type="text" id="setupLoaderVersion" placeholder="Automaticky hledám..." autocomplete="off"><small id="loaderTip">Pokusím se doplnit automaticky. Lze upravit ručně.</small></label>
+ <label class="field" style="grid-column:1/-1">Doporučená RAM: <strong id="ramValue">6 GB</strong><input id="setupRam" type="range" min="2" max="12" step="1" value="6"><small>RAM je doporučení pro launcher, není součástí nastavení .mrpack.</small></label>
+ </div>
+ <button class="primary" id="generateSetup" type="button">✨ Vybrat až 50 modů</button>
+ <div id="setupOutput" class="setup-output hidden" aria-live="polite"></div>
+ <p class="notice">ModMate vytvoří importovatelný soubor <b>.mrpack</b>. Ten otevřeš v Modrinth App nebo Prism Launcheru a potom klikneš na Play. Kompatibilita se kontroluje podle zveřejněných verzí a závislostí; společné fungování všech modů nelze předem stoprocentně zaručit.</p>
+ </section></div>`;
+ $('closeModal').addEventListener('click',mmClose);
+ $('modalBackdrop').addEventListener('click',e=>{if(e.target.id==='modalBackdrop')mmClose()});
+ $('setupRam').addEventListener('input',()=>$('ramValue').textContent=$('setupRam').value+' GB');
+ let check=0;const loaderLookup=async()=>{
+   const request=++check;const field=$('setupLoaderVersion');field.value='';field.placeholder='Načítám doporučenou verzi...';
+   const v=await mmFindLoaderVersion($('setupVersion').value,$('setupLoader').value);
+   if(request!==check||!$('setupLoaderVersion'))return;
+   field.value=v;field.placeholder='Zadej verzi loaderu';
+   $('loaderTip').textContent=v?'Automaticky nalezeno; můžeš změnit.':'Verzi se nepodařilo zjistit automaticky. Doplň ji ručně pro export .mrpack.';
+ };
+ $('setupVersion').addEventListener('change',loaderLookup);
+ $('setupLoader').addEventListener('change',loaderLookup);
+ $('generateSetup').addEventListener('click',mmGenerate);
+ loaderLookup();
+}
+async function mmGenerate(){
+ if(mmBusy)return;
+ const idea=$('setupIdea').value.trim(),mc=$('setupVersion').value,loader=$('setupLoader').value;
+ const name=$('setupName').value.trim()||'ModMate Pack',ram=Number($('setupRam').value);
+ const lv=$('setupLoaderVersion').value.trim();
+ if(!idea){mmMessage('Nejprve napiš, jaký modpack chceš.');return;}
+ const config={idea,mc,loader,name,ram,loaderVersion:lv};
+ mmBusy=true;mmSelection=null;
+ $('generateSetup').disabled=true;$('generateSetup').textContent='Vybírám mody…';
+ $('closeModal').disabled=true;
+ try{
+   const {queries,groups}=mmQueries(idea);
+   mmMessage('Hledám vhodné mody na Modrinth…',5);
+   const facets=JSON.stringify([['project_type:mod'],['versions:'+mc],['categories:'+loader]]);
+   let found=[],fail=0;
+   for(let i=0;i<queries.length;i++){
+     try{
+       const q=new URLSearchParams({query:queries[i],facets,limit:'100',index:'relevance'});
+       const res=await mmGet('/search?'+q.toString());
+       found.push(...(res.hits||[]));
+     }catch(e){fail++;}
+     mmMessage(`Hledám: ${queries[i]} · ${found.length} kandidátů`,5+18*(i+1)/queries.length);
+   }
+   const seen=new Map();
+   for(const p of found){if(p.project_id&&!seen.has(p.project_id))seen.set(p.project_id,p);}
+   const ranked=[...seen.values()].map(p=>({...p,mmTags:mmThemes(p,groups),mmScore:mmRank(p,groups)})).sort((a,b)=>b.mmScore-a.mmScore);
+   if(!ranked.length)throw new Error('Nenašel jsem mody pro tuto kombinaci. Zkus jinou verzi Minecraftu, loader nebo popis.');
+   const byGroup=new Map(groups.map(g=>[g,ranked.filter(p=>p.mmTags.includes(g))]));
+   let candidates=[];
+   // Round-robin across themes ensures a mixed "horror + performance" pack.
+   let pos=0;
+   while(candidates.length<ranked.length&&pos<ranked.length){
+     for(const group of groups){if(byGroup.get(group)?.[pos])candidates.push(byGroup.get(group)[pos]);}
+     pos++;
+   }
+   candidates=[...new Map([...candidates,...ranked].map(p=>[p.project_id,p])).values()];
+   const selected=new Map(),versCache=new Map(),projectCache=new Map();
+   const getVer=async(projectId,pin)=>{
+     const key=pin?'v:'+pin:'p:'+projectId;
+     if(!versCache.has(key)){
+       versCache.set(key,(async()=>{
+         if(pin){const v=await mmGet('/version/'+encodeURIComponent(pin));return mmVersionValid(v,mc,loader)&&mmPrimaryFile(v)?v:null;}
+         const params=new URLSearchParams({loaders:JSON.stringify([loader]),game_versions:JSON.stringify([mc]),include_changelog:'false'});
+         const versions=await mmGet('/project/'+encodeURIComponent(projectId)+'/version?'+params.toString());
+         return mmChooseVersion(versions,mc,loader);
+       })());
+     }
+     return versCache.get(key);
+   };
+   const getProject=async id=>{
+     if(!projectCache.has(id))projectCache.set(id,mmGet('/project/'+encodeURIComponent(id)));
+     return projectCache.get(id);
+   };
+   let count=0,rejected=0,checked=0;
+   async function addRequired(p,via,pin,stack){
+     const id=p.project_id||p.id;
+     if(!id||stack.has(id))return true;
+     if(selected.has(id))return !pin||selected.get(id).version.id===pin;
+     if(selected.size>=50)return false;
+     const ver=await getVer(id,pin);
+     if(!ver)return false;
+     if((ver.dependencies||[]).some(d=>d.dependency_type==='incompatible'&&d.project_id&&selected.has(d.project_id)))return false;
+     for(const item of selected.values()){
+       if((item.version.dependencies||[]).some(d=>d.dependency_type==='incompatible'&&(d.project_id===id||d.version_id===ver.id)))return false;
+     }
+     const file=mmPrimaryFile(ver);
+     if(!file||!/^https:\/\//.test(file.url||'')||!file.hashes?.sha1||!file.hashes?.sha512)return false;
+     const deps=(ver.dependencies||[]).filter(d=>d.dependency_type==='required');
+     const next=new Set([...stack,id]);
+     for(const dep of deps){
+       let depId=dep.project_id,depVersion=dep.version_id||null;
+       if(!depId&&depVersion){
+         const pinned=await getVer('',depVersion);
+         depId=pinned?.project_id;
+       }
+       if(!depId)return false; // Never export with an unresolved required dependency.
+       if(next.has(depId))continue;
+       const depProject=selected.get(depId)?.project||await getProject(depId);
+       if(!await addRequired(depProject,'Závislost',depVersion,next))return false;
+     }
+     if(selected.size>=50)return false;
+     // Check conflicts again because resolving required dependencies added new mods.
+     if((ver.dependencies||[]).some(d=>d.dependency_type==='incompatible'&&d.project_id&&selected.has(d.project_id)))return false;
+     for(const item of selected.values()){
+       if((item.version.dependencies||[]).some(d=>d.dependency_type==='incompatible'&&(d.project_id===id||d.version_id===ver.id)))return false;
+     }
+     selected.set(id,{project:p,version:ver,file,via});
+     return true;
+   }
+   for(const p of candidates){
+     if(selected.size>=50)break;
+     checked++;
+     if(checked>180)break;
+     const oldKeys=new Set(selected.keys());
+     try{
+       if(!await addRequired(p,'Podle zadání',null,new Set())){for(const k of [...selected.keys()])if(!oldKeys.has(k))selected.delete(k);rejected++;}
+     }catch(e){for(const k of [...selected.keys()])if(!oldKeys.has(k))selected.delete(k);rejected++;}
+     count++;
+     if(count%3===0||selected.size===50)mmMessage(`Kontroluji kompatibilitu a závislosti: ${selected.size}/50`,25+70*Math.min(1,checked/Math.min(180,candidates.length)));
+   }
+   if(selected.size===0)throw new Error('Nedaří se najít funkční soubory modů a jejich závislosti. Zkus jinou kombinaci verze a loaderu.');
+   // Recheck dependencies after building, in case a candidate was rejected.
+   for(const item of selected.values()){
+     for(const dep of (item.version.dependencies||[]).filter(d=>d.dependency_type==='required')){
+       if(dep.project_id&&!selected.has(dep.project_id))throw new Error('Chybí povinná závislost '+dep.project_id+'. Zkus sestavení znovu.');
+     }
+   }
+   config.mods=[...selected.values()].map(x=>({
+     id:x.project.project_id||x.project.id,
+     title:x.project.title||x.project.slug||x.version.name,
+     icon_url:x.project.icon_url||null,slug:x.project.slug||null,
+     version_id:x.version.id,version_number:x.version.version_number,
+     via:x.via,file:x.file,environment:x.version.environment||null,
+     required_dependencies:(x.version.dependencies||[]).filter(d=>d.dependency_type==='required').map(d=>({project_id:d.project_id,version_id:d.version_id}))
+   }));
+   config.issues=fail;
+   config.rejected=rejected;
+   mmSelection=config;
+   mmDisplayPack(config);
+ }catch(err){mmMessage('Nepodařilo se vytvořit modpack: '+mmWaitErr(err));}
+ finally{
+   mmBusy=false;
+   if($('generateSetup')){$('generateSetup').disabled=false;$('generateSetup').textContent='↻ Vygenerovat nový výběr';}
+   if($('closeModal'))$('closeModal').disabled=false;
+ }
+}
+function mmDisplayPack(c){
+ const total=c.mods.length,dependent=c.mods.filter(m=>m.via==='Závislost').length;
+ const notice=total<50?`Bylo možné ověřit ${total} z požadovaných 50 modů. Další nebyly dostupné nebo se nevešly se závislostmi.`:'Vybráno 50 modů včetně povinných závislostí.';
+ const list=c.mods.map((m,i)=>`<div class="mod-item">${m.icon_url?`<img src="${escapeHTML(m.icon_url)}" alt="" loading="lazy">`:'<span>🧩</span>'}<div style="min-width:0"><strong title="${escapeHTML(m.title)}">${i+1}. <a href="https://modrinth.com/mod/${encodeURIComponent(m.id)}" target="_blank" rel="noopener">${escapeHTML(m.title)}</a></strong><small>${escapeHTML(m.version_number)} · ${m.via==='Závislost'?'Nutná závislost':'Vybráno pro téma'}</small></div></div>`).join('');
+ $('setupOutput').classList.remove('hidden');
+ $('setupOutput').innerHTML=`<h3>✓ ${escapeHTML(c.name)}</h3><p><b>${total}/50 modů</b> · Minecraft ${escapeHTML(c.mc)} · ${escapeHTML(c.loader)} · ${dependent} závislostí</p><p class="info-line">${escapeHTML(notice)}</p>
+ <div class="modlist">${list}</div>
+ <div class="actions-row"><button class="primary" type="button" id="downloadMRPack">⬇ Stáhnout modpack (.mrpack)</button><button class="secondary" type="button" id="downloadJSON">⬇ Export JSON</button></div>
+ <p class="info-line">1. Stáhni .mrpack. 2. V Modrinth App nebo Prism Launcheru zvol import modpacku. 3. Po instalaci klikni v launcheru na Play.</p>
+ ${!c.loaderVersion?'<p class="error">Verze loaderu nebyla zjištěna. Vyplň ji v poli nahoře a poté stáhni .mrpack.</p>':''}
+ <p class="info-line">Doporučená RAM: ${c.ram} GB. Výběr je automatický, proto mohou nastat konflikty mezi samotnými mody. Pokud se hra nespustí, je nutné problematické mody upravit.</p>`;
+ $('downloadJSON').addEventListener('click',()=>mmDownloadJSON(c));
+ $('downloadMRPack').addEventListener('click',()=>mmDownloadMRPack(c));
+}
+function mmSave(blob,filename){
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement('a');a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),30000);
+}
+function mmSafeName(s){return (s||'ModMate-Pack').replace(/[^\p{L}\p{N}._ -]/gu,'').trim().replace(/\s+/g,'-').slice(0,70)||'ModMate-Pack';}
+function mmDownloadJSON(c){
+ const out={name:c.name,idea:c.idea,minecraft:c.mc,loader:c.loader,loaderVersion:($('setupLoaderVersion')?.value.trim()||c.loaderVersion),
+   recommendedRamGB:c.ram,createdWith:'ModMate Auto-Setup',mods:c.mods.map(m=>({name:m.title,project_id:m.id,version_id:m.version_id,version:m.version_number,url:'https://modrinth.com/mod/'+m.id,required_dependencies:m.required_dependencies}))};
+ mmSave(new Blob([JSON.stringify(out,null,2)],{type:'application/json'}),mmSafeName(c.name)+'.json');
+}
+/* Small ZIP writer, STORE entries: supported by modern browsers without libraries/CDNs. */
+function mmCrc(bytes){
+ let c=0xffffffff;for(const b of bytes){c^=b;for(let i=0;i<8;i++)c=(c>>>1)^((c&1)?0xedb88320:0);}return(c^0xffffffff)>>>0;
+}
+function mmZip(entries){
+ const enc=new TextEncoder(),parts=[],central=[];let offset=0;
+ const u16=(dv,o,n)=>dv.setUint16(o,n,true),u32=(dv,o,n)=>dv.setUint32(o,n>>>0,true);
+ for(const [name,value] of entries){
+   const fileName=enc.encode(name),data=enc.encode(value),crc=mmCrc(data);
+   const h=new Uint8Array(30+fileName.length),v=new DataView(h.buffer);
+   u32(v,0,0x04034b50);u16(v,4,20);u16(v,6,0x800);u16(v,8,0);u32(v,14,crc);
+   u32(v,18,data.length);u32(v,22,data.length);u16(v,26,fileName.length);h.set(fileName,30);
+   parts.push(h,data);
+   const cd=new Uint8Array(46+fileName.length),d=new DataView(cd.buffer);
+   u32(d,0,0x02014b50);u16(d,4,20);u16(d,6,20);u16(d,8,0x800);u32(d,16,crc);
+   u32(d,20,data.length);u32(d,24,data.length);u16(d,28,fileName.length);u32(d,42,offset);
+   cd.set(fileName,46);central.push(cd);offset+=h.length+data.length;
+ }
+ const start=offset;for(const cd of central){parts.push(cd);offset+=cd.length;}
+ const end=new Uint8Array(22),dv=new DataView(end.buffer);
+ u32(dv,0,0x06054b50);u16(dv,8,entries.length);u16(dv,10,entries.length);
+ u32(dv,12,offset-start);u32(dv,16,start);parts.push(end);
+ return new Blob(parts,{type:'application/x-modrinth-modpack+zip'});
+}
+function mmDownloadMRPack(c){
+ const loaderVersion=($('setupLoaderVersion')?.value.trim()||c.loaderVersion||'');
+ if(!loaderVersion){window.alert('Doplň nejdřív přesnou verzi '+c.loader+' loaderu. Bez ní nemůže být .mrpack správně sestaven.');$('setupLoaderVersion')?.focus();return;}
+ const files=[],paths=new Set();
+ for(const m of c.mods){
+   const f=m.file;
+   if(!f?.hashes?.sha1||!f?.hashes?.sha512||!f?.url||!/^https:\/\//.test(f.url)){window.alert('Mod '+m.title+' nemá soubor s potřebnými kontrolními součty.');return;}
+   let host;try{host=new URL(f.url).hostname;}catch{host='';}
+   if(!['cdn.modrinth.com','github.com','raw.githubusercontent.com','gitlab.com'].includes(host)){
+     window.alert('Mod '+m.title+' používá nepodporovanou adresu pro stažení.');return;
+   }
+   const clean=String(f.filename||'').split(/[\\/]/).pop().replace(/[^a-zA-Z0-9._+ -]/g,'_');
+   if(!/\.jar$/i.test(clean)){window.alert('Mod '+m.title+' nemá platný JAR soubor.');return;}
+   let path='mods/'+clean;
+   if(paths.has(path))path='mods/'+m.id+'-'+clean;
+   paths.add(path);
+   const environment=['client_only','client_only_server_optional','singleplayer_only'].includes(m.environment)
+     ?{client:'required',server:'unsupported'}:undefined;
+   files.push({path,hashes:{sha1:f.hashes.sha1,sha512:f.hashes.sha512},downloads:[f.url],fileSize:f.size,...(environment?{env:environment}:{})});
+ }
+ const index={formatVersion:1,game:'minecraft',versionId:'1.0.0',name:c.name,summary:'Vytvořeno pomocí ModMate: '+c.idea,
+   files,dependencies:{minecraft:c.mc,[mmLoaderKey(c.loader)]:loaderVersion}};
+ const blob=mmZip([['modrinth.index.json',JSON.stringify(index,null,2)]]);
+ mmSave(blob,mmSafeName(c.name)+'.mrpack');
+}
+$('autoSetupBtn').addEventListener('click',showModal);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('modalRoot').classList.contains('hidden')){$('modalRoot').classList.add('hidden');$('modalRoot').innerHTML=''}});
+function showView(view){currentView=view;document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view));$('hero').classList.toggle('hidden',view!=='discover');$('discoverView').classList.toggle('hidden',view!=='discover');$('favoritesView').classList.toggle('hidden',view!=='favorites');if(view==='favorites')renderFavorites()}
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));$('searchForm').addEventListener('submit',e=>{e.preventDefault();showView('discover');loadPacks()});['version','loader','sort'].forEach(id=>$(id).addEventListener('change',loadPacks));$('clearFilters').addEventListener('click',()=>{$('search').value='';$('version').value='';$('loader').value='';$('sort').value='relevance';loadPacks()});setFavs(getFavs());loadPacks();
+})();
+</script>
+</body>
+</html>
